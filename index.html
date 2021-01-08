@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Shrec 2021</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+
+						<h1><b>SHREC 2021</b></h1>
+						<p style="text-align:center; font-size:44px;"><b>Track on Skeleton-based Hand Gesture Recognition in the Wild</b></p>
+						<span	class="image"><img src="images/cropped-shapelab1.png" alt="" /></span>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Intro</a></li>
+							<li><a href="#first">Dataset</a></li>
+							<li><a href="#second">Task</a></li>
+							<li><a href="#cta">Timeline</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>General Description</h2>
+										</header>
+										<p>The Skeleton-based Hand Recognition in the Wild track aims to offer a challenge for methods and algorithms designed to recognize hand gestures. The focus, in particular, will be on detecting and localizing correctly, both in time and by class, gestures that are part of a squence. While we already published a dataset with a dictionary of 13 gestures and 72 sequences (<a href="https://www.sciencedirect.com/science/article/pii/S0097849320301163" target="_blank" rel="noopener noreferrer">SFINGE 3D</a>), in this year's track, we further enriched the challenge by mixing in the sequences semi-random hand movements between actual gestures (labeled as non-gestures).
+											<br/>For further details read on to the Dataset section.</p>
+										<!--<ul class="actions">
+											<li><a href="generic.html" class="button">Learn More</a></li>
+										</ul>-->
+									</div>
+									<!--<span class="image"><img src="images/pic01.jpg" alt="" /></span>-->
+								</div>
+							</section>
+
+						<!-- First Section -->
+							<section id="first" class="main">
+								<div class="content">
+								<header class="major">
+									<h2>Dataset</h2>
+
+								</header>
+							</div>
+							<p>The dataset is made of 144 sequences of gestures. Each sequence contains from 3 to 5 gestures padded by semi-random hand movements labeled as non-gesture.
+							The dictionary is made of 18 gestures divded in static gestures, characterized by a static pose of the hand, and dynamic gestures, characterized by the trajectory of the hand and its joints.
+							The list of the gestures in the dictionary is the following.</p>
+							<div id="container">
+
+								<div id="floated" class="image" >
+
+							<img src="images/joints.jpg" alt="Hand joints recorded with the LeapMotion sensor" style="float:right;margin-right:10em"/>
+
+						</div>
+
+						<dl>
+							<dt>Static Gestures</dt>
+							<dd>- ONE</dd>
+							<dd>- TWO</dd>
+							<dd>- THREE</dd>
+							<dd>- FOUR</dd>
+							<dd>- OK</dd>
+							<dd>- MENU</dd>
+							<dd>- POINTING</dd>
+							<dt>Dynamic Gestures</dt>
+							<dd>- LEFT</dd>
+							<dd>- RIGHT</dd>
+							<dd>- CIRCLE</dd>
+							<dd>- V</dd>
+							<dd>- CROSS</dd>
+							<dd>- GRAB</dd>
+							<dd>- PINCH</dd>
+							<dd>- TAP</dd>
+							<dd>- DENY</dd>
+							<dd>- KNOB</dd>
+						</dl>
+						<p>The sensor used to capture the trajectory is a LeapMotion recording at 50fps. Each file in the dataset represents one of the sequences and each row contains the data of the hand's joints captured in a single frame by the sensor. All data in a row is separated by a semicolon. Each line includes the position and rotation values for the hand palm and all the finger joints.<br/> The line index (starting from 1) coresponds to the timestamp of the corresponding frame.
+The structure of a row is summarized in the following scheme:</p><p style="text-align:left"> palmpos(x;y;z); palmquat(x,y,z,w); thumbApos(x;y;z); thumbAquat(x;y;z;w); thumBpos(x;y;z); thumbBquat(x;y;z;w); thumbEndpos(x;y;z); thumbEndquat(x;y;z;w); indexApos(x;y;z); indexAquat(x;y;z;w); indexBpos(x;y;z); indexBquat(x;y;z;w); indexCpos(x;y;z); indexCquat(x;y;z;w); indexEndpos(x;y;z); indexEndquat(x;y;z;w); middleApos(x;y;z); middleAquat(x;y;z;w); middleBpos(x;y;z); middleBquat(x;y;z;w); middleCpos(x;y;z); middleCquat(x;y;z;w); middleEndpos(x;y;z); middleEndquat(x;y;z;w); ringApos(x;y;z); ringAquat(x;y;z;w); ringBpos(x;y;z); ringBquat(x;y;z;w); ringCpos(x;y;z); ringCquat(x;y;z;w); ringEndpos(x;y;z); ringEndquat(x;y;z;w); pinkyApos(x;y;z); pinkyAquat(x;y;z;w); pinkyBpos(x;y;z); pinkyBquat(x;y;z;w); pinkyCpos(x;y;z); pinkyCquat(x;y;z;w); pinkyEndpos(x;y;z); pinkyEndquat(x;y;z;w)</p><p>where the joint positions corresponds to those reported in the image above.
+Each joint is therefore characterized by 7 floats, three for position and four for the quaternion, the sequence starts from the palm, then the thumb with three joints ending with the tip and then the other four fingers with four joints each ending with the tip.
+<dl>
+	<dt>Download Links</dt>
+	<dd><a href="/examples.zip" target="_blank" rel="noopener noreferrer">Example of labeled sequences</a></dd>
+	<dd>Traning set (labeled) <em style="font-size:20px">&nbsp;...COMING SOON</em></dd>
+	<dd>Test set <em style="font-size:20px">&nbsp;...COMING SOON</em></dd>
+</dl>
+</p>
+
+						</div>
+
+							</section>
+
+						<!-- Second Section -->
+							<section id="second" class="main">
+								<header class="major">
+									<h2>Task and Evaluation</h2>
+
+								</header>
+								<p>
+									Participants must provide methods to detect and classify gestures of the dictionary in the test sequences. Results should be submitted in a text file (NAME_SURNAME.txt) including a row for each sequence with the following information sequence number (the id of the sequence in the test set provided by the filename), identifed gesture label (see the dictionary), detected start of the gesture (frame/row number in the sequence file), detected end of the gesture (frame/row number in the sequence file). For example, if the algorithm in the first sequence detects a PINCH and a ONE and in the second a THREE, a LEFT and a KNOB, the first two lines of the results file will be like the following ones:
+									<dl>
+										<dd>1;PINCH;12;54;ONE;82;138;</dd>
+											<dd>2;THREE;18;75;LEFT;111;183;KNOB;222;298;</dd>
+					</dl>
+Executable code performing the classification should be provided with the submission with instruction for its use.
+The evaluation will be based on the number of correct gestures detected, the false positive rate and the accuracy of the start and end frame detected.
+								</p>
+
+							</section>
+
+						<!-- Get Started -->
+							<section id="cta" class="main">
+								<header class="major">
+									<h2>Timeline</h2>
+
+								</header>
+								<p>
+								<dl>
+									<dt> February 1</dt>
+									<dd>Dataset available</dd>
+									<dt> February 7</dt>
+									<dd>Registrations deadline</dd>
+									<dt> March 1</dt>
+									<dd>Results submission deadline</dd>
+									<dt> March 15</dt>
+									<dd>Submission of the track report to the reviewers</dd>
+								</dl>
+							</p>
+								<!--<footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button primary">Get Started</a></li>
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer>-->
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>VIPS Lab (UniVR)</h2>
+							<p>The Vision, Image Processing & Sound (VIPS) laboratory is active in research issues related to Computer Vision and Pattern Recognition, Image Processing, and Sound Analysis & Processing, devoted to applications involving Human-Computer Interaction (HCI) and Multimedia aspects in general.</p>
+							<ul class="actions">
+								<li><a href="http://vips.sci.univr.it/html/welcome.html" target="_blank" rel="noopener noreferrer" class="button">Learn More</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Contacts</h2>
+							<p> Andrea Giachetti: <u> andrea.giachetti(at)univr.it</u>
+							<br/>Ariel Caputo: <u> cptfmr71(at)univr.it</u></p>
+							<!--<dl class="alt">
+
+							</dl>-->
+							<!--<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>-->
+						</section>
+						<p class="copyright">&copy; <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
