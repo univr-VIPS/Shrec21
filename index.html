@@ -100,7 +100,7 @@ The structure of a row is summarized in the following scheme:</p><p style="text-
 Each joint is therefore characterized by 7 floats, three for position and four for the quaternion, the sequence starts from the palm, then the thumb with three joints ending with the tip and then the other four fingers with four joints each ending with the tip.
 <dl>
 	<dt>Download Links</dt>
-	<dd><a href="/examples.zip" target="_blank" rel="noopener noreferrer">Example of labeled sequences</a></dd>
+	<dd><a href="examples.zip" target="_blank" rel="noopener noreferrer">Example of labeled sequences</a></dd>
 	<dd>Traning set (labeled) <em style="font-size:20px">&nbsp;...COMING SOON</em></dd>
 	<dd>Test set <em style="font-size:20px">&nbsp;...COMING SOON</em></dd>
 </dl>
@@ -117,7 +117,9 @@ Each joint is therefore characterized by 7 floats, three for position and four f
 
 								</header>
 								<p>
-									Participants must provide methods to detect and classify gestures of the dictionary in the test sequences. Results should be submitted in a text file (NAME_SURNAME.txt) including a row for each sequence with the following information sequence number (the id of the sequence in the test set provided by the filename), identifed gesture label (see the dictionary), detected start of the gesture (frame/row number in the sequence file), detected end of the gesture (frame/row number in the sequence file). For example, if the algorithm in the first sequence detects a PINCH and a ONE and in the second a THREE, a LEFT and a KNOB, the first two lines of the results file will be like the following ones:
+									Participants must provide methods to detect and classify gestures of the dictionary in the test sequences. Results should be submitted in a text file (NAME_SURNAME.txt) including a row for each sequence with the following information sequence number (the id of the sequence in the test set provided by the filename), identifed gesture label (see the dictionary), detected start of the gesture (frame/row number in the sequence file), detected end of the gesture (frame/row number in the sequence file). For 
+									
+									, if the algorithm in the first sequence detects a PINCH and a ONE and in the second a THREE, a LEFT and a KNOB, the first two lines of the results file will be like the following ones:
 									<dl>
 										<dd>1;PINCH;12;54;ONE;82;138;</dd>
 											<dd>2;THREE;18;75;LEFT;111;183;KNOB;222;298;</dd>
