@@ -31,6 +31,7 @@
 							<li><a href="#intro" class="active">Intro</a></li>
 							<li><a href="#first">Dataset</a></li>
 							<li><a href="#second">Task</a></li>
+							<li><a href="#third">Participate</a></li>
 							<li><a href="#cta">Timeline</a></li>
 						</ul>
 					</nav>
@@ -118,21 +119,29 @@ Each joint is therefore characterized by 7 floats, three for position and four f
 
 								</header>
 								<p>
-									To join the contest send an email to either one of the contacts available in the section below stating your affiliation and intention to participate.
-									Participants must provide methods to detect and classify gestures of the dictionary in the test sequences. Results should be submitted via mail in a text file (NAME_SURNAME.txt) including a row for each sequence with the following information sequence number (the id of the sequence in the test set provided by the filename), identifed gesture label (see the dictionary), detected start of the gesture (frame/row number in the sequence file), detected end of the gesture (frame/row number in the sequence file). For 
-									
-									, if the algorithm in the first sequence detects a PINCH and a ONE and in the second a THREE, a LEFT and a KNOB, the first two lines of the results file will be like the following ones:
+									Participants should develop methods to detect and classify gestures of the dictionary in the test sequences. The results format should consists of a row for each sequence with the following information: sequence number (the id of the sequence in the test set provided by the filename), identifed gesture label (see the dictionary), detected start of the gesture (frame/row number in the sequence file), detected end of the gesture (frame/row number in the sequence file).
+									For example, if the algorithm in the first sequence detects a PINCH and a ONE and in the second a THREE, a LEFT and a KNOB, the first two lines of the results file will be like the following ones:
 									<dl>
 										<dd>1;PINCH;12;54;ONE;82;138;</dd>
 											<dd>2;THREE;18;75;LEFT;111;183;KNOB;222;298;</dd>
 					</dl>
-					A maximum of 3 files with results can be submitted using different methods or different method variants.
-Executable code performing the classification should be provided with the submission with instruction for its use as well as a description of the method in a LaTeX format for the submission of the track report.
 The evaluation will be based on the number of correct gestures detected, the false positive rate and the accuracy of the start and end frame detected.
 								</p>
 
 							</section>
 
+							<section id="third" class="main">
+								<header class="major">
+									<h2>How to participate</h2>
+
+								</header>
+								<p>
+									To join the contest you can send an email to either <b>andrea.giachetti(at)univr.it</b> or <b>ariel.caputo(at)univr.it</b> stating your affiliation and your intention to participate.
+									Results should also be submitted via mail in a text file (NAME_SURNAME.txt) up to a maximum 3 files with results from different methods or different variants of the proposode method.
+Executable code performing the classification should be provided with the submission with instruction for its use as well as a description of the method in a LaTeX format for the submission of the track report.
+								</p>
+
+							</section>
 						<!-- Get Started -->
 							<section id="cta" class="main">
 								<header class="major">
