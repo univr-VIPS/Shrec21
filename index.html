@@ -69,7 +69,7 @@
 								The dataset is made of 144 sequences of gestures. Each sequence has been planned to include from 3 to 5 gestures padded by semi-random hand movements labeled as non-gesture. The original dictionary is made of 18 gestures divded in static gestures, characterized by a static pose of the hand, and dynamic gestures, characterized by the trajectory of the hand and its joints.
 									The dataset is split in a training set with 
 									
-									 However, we discovered some smal bugs in the annotation provided for the contest and we propose an update of the dataset (annotation only). In particular, we removed a gesture class (POINTING) that had relevant issues related to potential similarity with subsetes of other gesticulations and was not correctly annotated in some cases. And we revised completely the 
+									 However, we discovered some smal bugs in the annotation provided for the contest and we propose an update of the dataset (annotation only). In particular, we removed a gesture class (POINTING) that had relevant issues related to potential similarity with subsetes of other gesticulations and was not correctly annotated in some cases. And we checked and revised the annotations of all the other gestures, discovered also some errors in gesture executions that forced us to change some other 
 									
 								</header>
 							</div>
@@ -91,13 +91,15 @@
 							<dd>- FOUR</dd>
 							<dd>- OK</dd>
 							<dd>- MENU</dd>
-							<dd>- <div color="red"> POINTING - REMOVED </div></dd>
-							<dt>Dynamic Gestures</dt>
+							
+							<dt>ynamic Gestures</dt>
 							<dd>- LEFT</dd>
 							<dd>- RIGHT</dd>
 							<dd>- CIRCLE</dd>
 							<dd>- V</dd>
 							<dd>- CROSS</dd>
+							
+							<dt>Fine dynamic Gestures</dt>
 							<dd>- GRAB</dd>
 							<dd>- PINCH</dd>
 							<dd>- TAP</dd>
@@ -109,9 +111,8 @@
 The structure of a row is summarized in the following scheme:</p><p style="text-align:left"> palmpos(x;y;z); palmquat(x,y,z,w); thumbApos(x;y;z); thumbAquat(x;y;z;w); thumBpos(x;y;z); thumbBquat(x;y;z;w); thumbEndpos(x;y;z); thumbEndquat(x;y;z;w); indexApos(x;y;z); indexAquat(x;y;z;w); indexBpos(x;y;z); indexBquat(x;y;z;w); indexCpos(x;y;z); indexCquat(x;y;z;w); indexEndpos(x;y;z); indexEndquat(x;y;z;w); middleApos(x;y;z); middleAquat(x;y;z;w); middleBpos(x;y;z); middleBquat(x;y;z;w); middleCpos(x;y;z); middleCquat(x;y;z;w); middleEndpos(x;y;z); middleEndquat(x;y;z;w); ringApos(x;y;z); ringAquat(x;y;z;w); ringBpos(x;y;z); ringBquat(x;y;z;w); ringCpos(x;y;z); ringCquat(x;y;z;w); ringEndpos(x;y;z); ringEndquat(x;y;z;w); pinkyApos(x;y;z); pinkyAquat(x;y;z;w); pinkyBpos(x;y;z); pinkyBquat(x;y;z;w); pinkyCpos(x;y;z); pinkyCquat(x;y;z;w); pinkyEndpos(x;y;z); pinkyEndquat(x;y;z;w)</p><p>where the joint positions corresponds to those reported in the image above.
 Each joint is therefore characterized by 7 floats, three for position and four for the quaternion, the sequence starts from the palm, then the thumb with three joints ending with the tip and then the other four fingers with four joints each ending with the tip.
 
-
-						</div>
-
+								
+			
 							</section>
 
 						<!-- Second Section -->
@@ -121,13 +122,16 @@ Each joint is therefore characterized by 7 floats, three for position and four f
 
 								</header>
 								<p>
-									Participants should develop methods to detect and classify gestures of the dictionary in the test sequences. <u>The developed methods should process data simulating an online detection scenario or, in other words, detect and classify gestures progressively by processing trajectories from beginning to end.</u> The results format should consists of a row for each sequence with the following information: sequence number (the id of the sequence in the test set provided by the filename), identifed gesture label (see the dictionary), detected start of the gesture (frame/row number in the sequence file), detected end of the gesture (frame/row number in the sequence file).
+									The dataset is split in two parts, a training set, including 108 sequences with approximately 24 gestures per class (the exact number is sometimes slightly different due to the revised annotation) and a test set, including 72 sequences with approximately 16 gestures per class. 
+			
+Participants should develop methods to detect and classify gestures of the dictionary in the test sequences based on the annotated examples in the training sequences. <u>The developed methods should process data simulating an online detection scenario or, in other words, detect and classify gestures progressively by processing trajectories from beginning to end.</u> 
+									The annotation/test results format should consists of a text files with a row for each sequence with the following information: sequence number (the number in the filename with the sequence in the training/test), identifed gesture label (the string in the dictionary), detected start of the gesture (frame/row number in the sequence file), detected end of the gesture (frame/row number in the sequence file).
 									For example, if the algorithm in the first sequence detects a PINCH and a ONE and in the second a THREE, a LEFT and a KNOB, the first two lines of the results file will be like the following ones:
 									<dl>
 										<dd>1;PINCH;12;54;ONE;82;138;</dd>
 											<dd>2;THREE;18;75;LEFT;111;183;KNOB;222;298;</dd>
 					</dl>
-The evaluation will be based on the number of correct gestures detected, the false positive rate and the accuracy of the start and end frame detected.
+The evaluation is based on the number of correct gestures detected, the false positive rate and the accuracy of the start and end frame detected.
 								</p>
 
 							
