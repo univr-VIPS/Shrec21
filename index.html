@@ -57,7 +57,6 @@
 								<div class="spotlight">
 									<h2>DATASET, annotation revision and call for novel submissions </h2>
 									</div>
-								https://arxiv.org/abs/2106.10980
 							</section>	
 
 						<!-- First Section -->
@@ -66,15 +65,15 @@
 								<header class="major">
 									<h2>Dataset</h2>
 
-								The dataset is made of 144 sequences of gestures. Each sequence has been planned to include from 3 to 5 gestures padded by semi-random hand movements labeled as non-gesture. The original dictionary is made of 18 gestures divded in static gestures, characterized by a static pose of the hand, and dynamic gestures, characterized by the trajectory of the hand and its joints.
-									The dataset is split in a training set with 
+								The dataset is made of 180 sequences of gestures. Each sequence has been planned to include from 3 to 5 gestures padded by semi-random hand movements labeled as non-gesture. The original dictionary is made of 18 gestures divded in static gestures, characterized by a static pose of the hand, and dynamic gestures, characterized by the trajectory of the hand and its joints.
+									The dataset is split in a training set with 108 sequences including originally 24 examples per gesture class and a text sequence including about 16 examples per class.
 									
-									 However, we discovered some smal bugs in the annotation provided for the contest and we propose an update of the dataset (annotation only). In particular, we removed a gesture class (POINTING) that had relevant issues related to potential similarity with subsetes of other gesticulations and was not correctly annotated in some cases. And we checked and revised the annotations of all the other gestures, discovered also some errors in gesture executions that forced us to change some other 
+									 However, we discovered some smal bugs in the annotation provided for the contest and we propose, therefore an update of the dataset (annotation only). In particular, we removed a gesture class (POINTING) that had relevant issues related to potential similarity with subsetes of other gesticulations and was not correctly annotated in some cases. And we checked and revised the annotations of all the other gestures, so that the limits of the gestures have sometimes been changed and a few wrong executions been detected. 
 									
 								</header>
 							</div>
-							<p>T
-							The list of the gestures in the dictionary is the following.</p>
+							<p>
+							The list of the gestures in the updated dictionary is the following.</p>
 							<div id="container">
 
 								<div id="floated" class="image" >
@@ -108,7 +107,7 @@
 							<dd>- EXPAND</dd>
 						</dl>
 								
-								<p> The original dataset included the annotations of a further gesture class, POINTING, that has been removed for relevant issues in the annotation. </p>
+							
 						<p>The sensor used to capture the trajectory is a LeapMotion recording at 50fps. Each file in the dataset represents one of the sequences and each row contains the data of the hand's joints captured in a single frame by the sensor. All data in a row is separated by a semicolon. Each line includes the position and rotation values for the hand palm and all the finger joints.<br/> The line index (starting from 1) coresponds to the timestamp of the corresponding frame.
 The structure of a row is summarized in the following scheme:</p><p style="text-align:left"> palmpos(x;y;z); palmquat(x,y,z,w); thumbApos(x;y;z); thumbAquat(x;y;z;w); thumBpos(x;y;z); thumbBquat(x;y;z;w); thumbEndpos(x;y;z); thumbEndquat(x;y;z;w); indexApos(x;y;z); indexAquat(x;y;z;w); indexBpos(x;y;z); indexBquat(x;y;z;w); indexCpos(x;y;z); indexCquat(x;y;z;w); indexEndpos(x;y;z); indexEndquat(x;y;z;w); middleApos(x;y;z); middleAquat(x;y;z;w); middleBpos(x;y;z); middleBquat(x;y;z;w); middleCpos(x;y;z); middleCquat(x;y;z;w); middleEndpos(x;y;z); middleEndquat(x;y;z;w); ringApos(x;y;z); ringAquat(x;y;z;w); ringBpos(x;y;z); ringBquat(x;y;z;w); ringCpos(x;y;z); ringCquat(x;y;z;w); ringEndpos(x;y;z); ringEndquat(x;y;z;w); pinkyApos(x;y;z); pinkyAquat(x;y;z;w); pinkyBpos(x;y;z); pinkyBquat(x;y;z;w); pinkyCpos(x;y;z); pinkyCquat(x;y;z;w); pinkyEndpos(x;y;z); pinkyEndquat(x;y;z;w)</p><p>where the joint positions corresponds to those reported in the image above.
 Each joint is therefore characterized by 7 floats, three for position and four for the quaternion, the sequence starts from the palm, then the thumb with three joints ending with the tip and then the other four fingers with four joints each ending with the tip.
